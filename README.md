@@ -15,7 +15,7 @@ Static site on Vercel, deployed from this repo. Every push to `main` redeploys.
 4. Vercel > Project > Settings > Environment Variables: add `BREVO_API_KEY` and `BREVO_LIST_ID`, then redeploy.
 
 ## Before launch
-- Remove the `noindex` robots tag from `index.html`.
+- ~~Remove the `noindex` robots tag from `index.html`~~ (done Nov 2026)
 - Confirm the signup fine print matches how the Foundation will email this list.
 
 ## Before the Giving Tuesday switch
