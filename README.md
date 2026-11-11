@@ -1,14 +1,24 @@
-# You Keep Them in School: 2026 Giving Tuesday / year-end landing page
+# You Keep Them in School: 2026 campaign site
 
-Static single page (`index.html`) for the Allan Hancock College Foundation's 2026 campaign. Deployed on Vercel from this repo; every push to `main` redeploys.
+Static site on Vercel, deployed from this repo. Every push to `main` redeploys.
+
+## Pages
+- `index.html`: **live now.** Lead page: name + email (optional mailing address) for a free copy of REAL. Ask-free.
+- `giving-tuesday.html`: **draft.** Giving Tuesday / year-end page with five giving areas. Becomes the home page the week before Giving Tuesday (manual switch: it is renamed to `index.html`).
+- `api/subscribe.js`: serverless function that adds signups to Brevo.
+- `styles.css`: shared styles.
+
+## Brevo setup (one time)
+1. Brevo > Contacts > Lists: create a list (e.g. "REAL 2026 requests") and note its numeric ID.
+2. Brevo > Contacts > Settings > Contact attributes: add text attributes `REAL_FORMAT`, `ADDRESS`, `CITY`, `STATE`, `ZIP`, `SIGNUP_SOURCE`.
+3. Brevo > SMTP & API > API Keys: create a key.
+4. Vercel > Project > Settings > Environment Variables: add `BREVO_API_KEY` and `BREVO_LIST_ID`, then redeploy.
 
 ## Before launch
-- Set `GIVE_URL` near the bottom of `index.html` to the real online giving form.
-- Remove the `<meta name="robots" content="noindex, nofollow">` tag.
-- Confirm consent to name Alexa Nunez Palos and quote her on a public web page.
+- Remove the `noindex` robots tag from `index.html`.
+- Confirm the signup fine print matches how the Foundation will email this list.
 
-## Deadline messaging (automatic, Pacific time)
-- Before Dec 1: countdown to Giving Tuesday
-- Dec 1: "Today is Giving Tuesday"
-- Dec 2 to Dec 31: days left to give in 2026
-- After Dec 31: thank-you line
+## Before the Giving Tuesday switch
+- Fill in the fifth giving area.
+- Paste each area's donation URL into `GIVE_URLS` in `giving-tuesday.html`.
+- Remove its `noindex` tag.

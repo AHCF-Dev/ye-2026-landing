@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>You Keep Them in School | Allan Hancock College Foundation</title>
+<meta name="description" content="This Giving Tuesday, choose where your gift goes: emergency help, scholarships, programs, athletics, and more.">
+<!-- DRAFT: Giving Tuesday version. Not linked from the live page. Keep noindex until it becomes the home page. -->
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:title" content="You keep them in school.">
+<meta property="og:description" content="This Giving Tuesday, choose where your gift goes.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="strip" id="strip">Giving Tuesday is December 1</div>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top">Allan Hancock College Foundation<small>Santa Maria, California</small></a>
+    <a class="btn small" href="#areas">Give</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div class="eyebrow" id="eyebrow">Giving Tuesday &middot; December 1, 2026</div>
+      <h1>You keep them<br>in school.</h1>
+      <p class="lede">Some Hancock students are one bill away from leaving college. Others are one scholarship away from finishing. <strong>This Giving Tuesday, you choose where your gift goes.</strong></p>
+      <a class="btn" href="#areas">Choose where to give</a>
+      <div class="countdown" id="countdown"></div>
+    </div>
+  </section>
+
+  <section id="areas">
+    <div class="wrap">
+      <div class="narrow">
+        <div class="kicker">Where your gift goes</div>
+        <h2>Pick the students you want to stand behind.</h2>
+      </div>
+      <div class="areas">
+
+        <div class="area">
+          <div class="kicker">Where the need is greatest</div>
+          <h3>President's Circle</h3>
+          <div class="stat">The gift that moves the same week</div>
+          <p>A $166 enrollment fee. A broken laptop. A rent payment a student can't make. Your gift reaches the student the week the bill does, and goes wherever the need is greatest.</p>
+          <a class="btn give-link" data-area="presidents-circle" href="#">Give to the President's Circle</a>
+        </div>
+
+        <div class="area">
+          <div class="kicker">Spring awards</div>
+          <h3>Scholarships</h3>
+          <div class="stat">More than 450 applicants went without one this year</div>
+          <p>This year, more than 860 students applied for scholarships. Over 450 of them didn't receive one. Each brought the same drive and the same need. Your gift helps reach the next one.</p>
+          <a class="btn give-link" data-area="scholarships" href="#">Give to scholarships</a>
+        </div>
+
+        <div class="area">
+          <div class="kicker">The program you care about</div>
+          <h3>Program support</h3>
+          <div class="stat">From nursing to welding to MESA</div>
+          <p>Your gift builds one Hancock program you care about, so students in it have what the work demands.</p>
+          <a class="btn give-link" data-area="programs" href="#">Give to a program</a>
+        </div>
+
+        <div class="area">
+          <div class="kicker">Bulldogs</div>
+          <h3>Athletics</h3>
+          <div class="stat">300+ student-athletes on 15 teams</div>
+          <p>Team travel, equipment, meals, and the other essentials that keep student-athletes on the field and in class.</p>
+          <a class="btn give-link" data-area="athletics" href="#">Give to Athletics</a>
+        </div>
+
+        <div class="area todo">
+          <div class="kicker">Fifth area</div>
+          <h3>[Fifth giving area]</h3>
+          <div class="stat">[One real, specific line]</div>
+          <p>[Two sentences on who this gift helps and how.]</p>
+          <a class="btn give-link" data-area="fifth" href="#">Give</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="question">
+    <div class="wrap narrow">
+      <div class="kicker">A fair question</div>
+      <p class="big-q">"The Foundation holds $31.3 million. Why does it need my gift?"</p>
+      <p>Most of that money sits in 127 separate endowed funds. Each was started by a family, a business, or a friend of the college who wanted a promise to outlast them. All but three can do only the one thing their founder asked.</p>
+      <p class="pull">None of them can pay a $166 enrollment fee this week.</p>
+      <p>A gift you make now can. That's why every gift has its own job, and why you get to choose it.</p>
+      <p><a class="btn" href="#areas">Choose where to give</a></p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <p class="fine" id="deadline-fine">Every gift made by December 31 counts toward 2026. Gifts support the area you choose and the overall mission of the Allan Hancock College Foundation.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <strong>Allan Hancock College Foundation</strong> &middot; Santa Maria, California
+  </div>
+</footer>
+
+<script>
+  /* ===== GIVING LINKS: one per area. Paste each donation form URL. ===== */
+  var GIVE_URLS = {
+    "presidents-circle": "",
+    "scholarships": "",
+    "programs": "",
+    "athletics": "",
+    "fifth": ""
+  };
+  document.querySelectorAll(".give-link").forEach(function (a) {
+    var url = GIVE_URLS[a.getAttribute("data-area")];
+    if (url) { a.href = url; a.target = "_blank"; a.rel = "noopener"; }
+  });
+
+  /* Deadline messaging, in Pacific time */
+  (function () {
+    var s = new Intl.DateTimeFormat("en-CA", { timeZone: "America/Los_Angeles", year: "numeric", month: "2-digit", day: "2-digit" }).format(new Date()).split("-");
+    var today = Date.UTC(+s[0], +s[1] - 1, +s[2]), DAY = 86400000;
+    var toGT = Math.round((Date.UTC(2026, 11, 1) - today) / DAY);
+    var toYE = Math.round((Date.UTC(2026, 11, 31) - today) / DAY);
+    var strip = document.getElementById("strip"), cd = document.getElementById("countdown");
+    if (toGT > 1) { strip.textContent = "Giving Tuesday is December 1, " + toGT + " days away"; cd.textContent = toGT + " days until Giving Tuesday"; }
+    else if (toGT === 1) { strip.textContent = "Giving Tuesday is tomorrow, December 1"; cd.textContent = "Giving Tuesday is tomorrow"; }
+    else if (toGT === 0) { strip.textContent = "Today is Giving Tuesday"; cd.textContent = "Today is Giving Tuesday. Thank you for being part of it."; }
+    else if (toYE >= 0) {
+      var left = toYE + 1;
+      strip.textContent = left === 1 ? "Today is the last day to give in 2026" : left + " days left to give in 2026";
+      cd.textContent = "Gifts made by December 31 count toward 2026.";
+      document.getElementById("eyebrow").textContent = "Year-end giving · 2026";
+    } else { strip.textContent = "Thank you for keeping Hancock students in school"; cd.textContent = ""; }
+  })();
+</script>
+</body>
+</html>
