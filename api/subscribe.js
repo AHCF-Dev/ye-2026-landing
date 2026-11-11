@@ -64,7 +64,7 @@ module.exports = async function handler(req, res) {
     console.error("Brevo error", r.status, detail);
     let code = "";
     try { code = JSON.parse(detail).code || ""; } catch (e) {}
-    return res.status(502).json({ error: "We couldn't save your signup.", brevoStatus: r.status, brevoCode: code, keyStart: apiKey.slice(0, 8), keyLength: apiKey.length, env: process.env.VERCEL_ENV || "", build: (process.env.VERCEL_GIT_COMMIT_SHA || "").slice(0, 7) });
+    return res.status(502).json({ error: "We couldn't save your signup.", brevoStatus: r.status, brevoCode: code });
   } catch (err) {
     console.error("Brevo request failed", err);
     return res.status(502).json({ error: "We couldn't save your signup." });
