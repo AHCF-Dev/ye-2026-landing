@@ -43,8 +43,8 @@ module.exports = async function handler(req, res) {
     return res.status(400).json({ error: "Please complete your mailing address." });
   }
 
-  const apiKey = process.env.BREVO_API_KEY;
-  const listId = parseInt(process.env.BREVO_LIST_ID, 10);
+  const apiKey = (process.env.BREVO_API_KEY || "").trim();
+  const listId = parseInt(String(process.env.BREVO_LIST_ID || "").trim(), 10);
   if (!apiKey || !listId) {
     console.error("Missing BREVO_API_KEY or BREVO_LIST_ID");
     return res.status(500).json({ error: "Signups aren't connected yet." });
