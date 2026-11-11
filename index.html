@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>You Keep Them in School | Allan Hancock College Foundation</title>
+<meta name="description" content="Some Hancock students are one bill away from leaving college. Your Giving Tuesday gift reaches them the same week the bill does.">
+<!-- PRE-LAUNCH: remove this robots tag when the real giving link is in place -->
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:title" content="You keep them in school.">
+<meta property="og:description" content="Some Hancock students are one bill away from leaving college. Your gift reaches them the same week the bill does.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0d2c54;
+    --navy-deep:#081d38;
+    --gold:#f2b632;
+    --gold-soft:#fbe7b5;
+    --paper:#fbf8f2;
+    --ink:#1d2430;
+    --muted:#5a6475;
+    --line:#e4ddcf;
+    --serif:"Source Serif 4", Georgia, "Times New Roman", serif;
+    --sans:Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:18px;line-height:1.6}
+  img{max-width:100%}
+  a{color:var(--navy)}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+  .narrow{max-width:680px}
+
+  /* Deadline strip */
+  .strip{background:var(--gold);color:var(--navy-deep);font-weight:600;font-size:15px;text-align:center;padding:10px 16px;letter-spacing:.01em}
+
+  /* Header */
+  header.top{background:var(--navy);color:#fff}
+  header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:18px;padding-bottom:18px}
+  .brand{font-family:var(--serif);font-weight:600;font-size:17px;line-height:1.2;color:#fff;text-decoration:none}
+  .brand small{display:block;font-family:var(--sans);font-weight:500;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-soft);opacity:.9}
+
+  /* Buttons */
+  .btn{display:inline-block;background:var(--gold);color:var(--navy-deep);font-weight:600;text-decoration:none;border-radius:999px;padding:14px 28px;font-size:18px;line-height:1.2;transition:transform .15s ease, box-shadow .15s ease}
+  .btn:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(0,0,0,.18)}
+  .btn:focus-visible{outline:3px solid #fff;outline-offset:3px}
+  .btn.small{padding:10px 18px;font-size:15px}
+  .btn.navy{background:var(--navy);color:#fff}
+  .btn.navy:focus-visible{outline-color:var(--navy)}
+
+  /* Hero */
+  .hero{background:var(--navy);color:#fff;padding:56px 0 72px;position:relative;overflow:hidden}
+  .hero::after{content:"";position:absolute;right:-120px;bottom:-160px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle, rgba(242,182,50,.22), rgba(242,182,50,0) 70%);pointer-events:none}
+  .eyebrow{font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+  .hero h1{font-family:var(--serif);font-weight:700;font-size:clamp(42px, 8vw, 76px);line-height:1.02;margin:14px 0 22px;letter-spacing:-.01em}
+  .hero p.lede{font-size:clamp(19px, 2.4vw, 22px);max-width:620px;color:#e6ecf5;margin:0 0 28px}
+  .hero .lede strong{color:#fff}
+  .countdown{margin-top:22px;font-size:15px;color:var(--gold-soft)}
+
+  /* Sections */
+  section{padding:64px 0}
+  h2{font-family:var(--serif);font-weight:700;font-size:clamp(30px, 4.6vw, 42px);line-height:1.12;color:var(--navy);margin:0 0 16px}
+  .kicker{font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#a77300;margin-bottom:8px}
+  p{margin:0 0 18px}
+
+  /* Bills */
+  .bills{display:grid;grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));gap:20px;margin-top:32px}
+  .bill{background:#fff;border:1px solid var(--line);border-radius:14px;padding:26px 24px 22px;position:relative}
+  .bill .amt{font-family:var(--serif);font-weight:700;font-size:46px;line-height:1;color:var(--navy)}
+  .bill .what{font-weight:600;color:var(--navy);margin:10px 0 8px;font-size:17px}
+  .bill p{font-size:16px;color:var(--muted);margin:0}
+  .note{font-size:16px;color:var(--muted);margin-top:24px}
+
+  /* Question block */
+  .question{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .big-q{font-family:var(--serif);font-size:clamp(24px, 3.4vw, 30px);line-height:1.3;color:var(--navy);font-weight:600}
+  .pull{font-family:var(--serif);font-size:clamp(24px, 3.6vw, 32px);font-weight:700;color:var(--navy);border-left:5px solid var(--gold);padding-left:18px;margin:28px 0}
+
+  /* Story */
+  .story{display:grid;grid-template-columns:1fr;gap:28px}
+  @media (min-width:860px){.story{grid-template-columns:1.1fr .9fr;align-items:start}}
+  blockquote{margin:0;background:var(--navy);color:#fff;border-radius:14px;padding:30px 28px}
+  blockquote p{font-family:var(--serif);font-size:24px;line-height:1.35;margin:0 0 14px}
+  blockquote cite{font-style:normal;font-size:15px;color:var(--gold-soft)}
+
+  /* Give */
+  .give{background:var(--navy-deep);color:#fff}
+  .give h2{color:#fff}
+  .give .kicker{color:var(--gold)}
+  .levels{display:grid;grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));gap:16px;margin:28px 0 30px}
+  .level{display:block;text-decoration:none;color:#fff;border:1px solid rgba(255,255,255,.22);border-radius:14px;padding:22px;transition:border-color .15s ease, background .15s ease}
+  .level:hover,.level:focus-visible{border-color:var(--gold);background:rgba(242,182,50,.08);outline:none}
+  .level .amt{font-family:var(--serif);font-size:36px;font-weight:700;color:var(--gold);line-height:1}
+  .level span{display:block;font-size:15px;color:#d5deea;margin-top:8px}
+  .fine{font-size:14px;color:#b9c5d6;max-width:680px}
+  .give .deadline{font-size:18px;color:#e6ecf5}
+
+  footer{padding:36px 0 48px;font-size:14px;color:var(--muted)}
+  footer strong{color:var(--ink)}
+
+  /* Sticky mobile give bar */
+  .sticky{position:fixed;left:0;right:0;bottom:0;background:rgba(13,44,84,.97);padding:10px 16px calc(10px + env(safe-area-inset-bottom));display:flex;justify-content:center;transform:translateY(110%);transition:transform .25s ease;z-index:10}
+  .sticky.show{transform:none}
+  .sticky .btn{width:100%;max-width:420px;text-align:center}
+  @media (min-width:760px){.sticky{display:none}}
+
+  @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<div class="strip" id="strip">Giving Tuesday is December 1</div>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top">Allan Hancock College Foundation<small>Santa Maria, California</small></a>
+    <a class="btn small give-link" href="#give">Give</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div class="eyebrow">Giving Tuesday &middot; December 1, 2026</div>
+      <h1>You keep them<br>in school.</h1>
+      <p class="lede">Some Hancock students are one bill away from leaving college. A $166 fee. A broken laptop. A rent payment they can't make. <strong>Your gift reaches them the same week the bill does.</strong></p>
+      <a class="btn give-link" href="#give">Keep a student in school</a>
+      <div class="countdown" id="countdown"></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="narrow">
+        <div class="kicker">One bill away</div>
+        <h2>The smallest bills can end a semester.</h2>
+        <p>A fee or a repair that most of us would barely notice can stop a Hancock student cold. Each of these happened to a real Hancock student. Gifts from people like you covered them, so the student could keep going.</p>
+      </div>
+      <div class="bills">
+        <div class="bill">
+          <div class="amt">$166</div>
+          <div class="what">An enrollment fee, due this week</div>
+          <p>Small enough to sound easy. Big enough to stop a student who doesn't have it.</p>
+        </div>
+        <div class="bill">
+          <div class="amt">$600</div>
+          <div class="what">A laptop screen</div>
+          <p>A new dad, caring for his baby on his own and between jobs, needed his laptop fixed to sign up for summer classes. Gifts paid for the repair so he could enroll.</p>
+        </div>
+        <div class="bill">
+          <div class="amt">$1,000</div>
+          <div class="what">A month that almost cost a home</div>
+          <p>A single mom, hurt at work and unable to earn a paycheck, fell behind on rent. Gifts helped keep her and her child housed while she found longer-term help.</p>
+        </div>
+      </div>
+      <p class="note">These bills don't stop coming. Another one will land on a student's kitchen table this week.</p>
+    </div>
+  </section>
+
+  <section class="question">
+    <div class="wrap narrow">
+      <div class="kicker">A fair question</div>
+      <p class="big-q">"The Foundation holds $31.3 million. Why does it need my gift?"</p>
+      <p>Most of that money sits in 127 separate endowed funds. Each was started by a family, a business, or a friend of the college who wanted a promise to outlast them. All but three can do only the one thing their founder asked.</p>
+      <p class="pull">None of them can pay a $166 enrollment fee this week.</p>
+      <p>A gift you make now, with no strings attached, can. It goes to the President's Circle, which moves the week a need shows up: a fee, a repair, a rent gap. You decide a student you haven't met is worth it. The people closest to that student make sure your gift gets there in time.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="story">
+        <div>
+          <div class="kicker">The semester no one plans for</div>
+          <h2>Alexa's way back</h2>
+          <p>Alexa Nunez Palos came to Hancock as a Promise student, working toward a degree she hoped would carry her to a four-year university. Last spring, something happened at work that forced her to drop all of her classes to recover.</p>
+          <p>When she was ready to come back, she no longer qualified for financial aid. Stepping away to heal had cost her the support she started with.</p>
+          <p>No scholarship is written for that. Unrestricted gifts paid her fall tuition, so she could keep going toward her degree.</p>
+        </div>
+        <blockquote>
+          <p>&ldquo;Due to your generosity, I can focus on healing and pursuing my educational goals.&rdquo;</p>
+          <cite>Alexa Nunez Palos, Hancock student</cite>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <section class="give" id="give">
+    <div class="wrap">
+      <div class="kicker">Your Giving Tuesday gift</div>
+      <h2>Be the reason a student stays.</h2>
+      <p class="deadline" id="give-deadline">Giving Tuesday is December 1. Every gift made by December 31 counts toward 2026.</p>
+      <div class="levels">
+        <a class="level give-link" href="#give"><div class="amt">$166</div><span>Covers an enrollment fee like the one that stops a student cold</span></a>
+        <a class="level give-link" href="#give"><div class="amt">$600</div><span>Fixes the laptop that lets a student sign up for classes</span></a>
+        <a class="level give-link" href="#give"><div class="amt">$1,000</div><span>Helps keep a student's family housed so school can continue</span></a>
+        <a class="level give-link" href="#give"><div class="amt">Other</div><span>Any amount you choose goes where the need is greatest</span></a>
+      </div>
+      <a class="btn give-link" href="#give">Give now</a>
+      <p class="fine" style="margin-top:28px">Gifts to the President's Circle support Hancock students and the overall mission of the Allan Hancock College Foundation, going where the need is greatest. Amounts above show the kinds of needs gifts have met; your gift is not limited to any single use.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <strong>Allan Hancock College Foundation</strong> &middot; Santa Maria, California<br>
+    Questions about giving? Contact the Foundation.
+  </div>
+</footer>
+
+<div class="sticky" id="sticky"><a class="btn give-link" href="#give">Keep a student in school</a></div>
+
+<script>
+  /* ===== SET THE REAL GIVING LINK HERE =====
+     Replace the empty string with your online donation form URL.
+     Every "Give" button on the page will point to it. */
+  var GIVE_URL = "";
+
+  if (GIVE_URL) {
+    document.querySelectorAll(".give-link").forEach(function (a) {
+      a.href = GIVE_URL;
+      a.target = "_blank";
+      a.rel = "noopener";
+    });
+  }
+
+  /* Deadline messaging, in Pacific time */
+  (function () {
+    function pacificToday() {
+      var s = new Intl.DateTimeFormat("en-CA", { timeZone: "America/Los_Angeles", year: "numeric", month: "2-digit", day: "2-digit" }).format(new Date());
+      var p = s.split("-");
+      return Date.UTC(+p[0], +p[1] - 1, +p[2]);
+    }
+    var DAY = 86400000;
+    var today = pacificToday();
+    var gt = Date.UTC(2026, 11, 1);
+    var ye = Date.UTC(2026, 11, 31);
+    var strip = document.getElementById("strip");
+    var cd = document.getElementById("countdown");
+    var gd = document.getElementById("give-deadline");
+    var daysToGT = Math.round((gt - today) / DAY);
+    var daysToYE = Math.round((ye - today) / DAY);
+
+    if (daysToGT > 1) {
+      strip.textContent = "Giving Tuesday is December 1, " + daysToGT + " days away";
+      cd.textContent = daysToGT + " days until Giving Tuesday";
+    } else if (daysToGT === 1) {
+      strip.textContent = "Giving Tuesday is tomorrow, December 1";
+      cd.textContent = "Giving Tuesday is tomorrow";
+    } else if (daysToGT === 0) {
+      strip.textContent = "Today is Giving Tuesday";
+      cd.textContent = "Today is Giving Tuesday. Thank you for being part of it.";
+    } else if (daysToYE >= 0) {
+      var left = daysToYE + 1;
+      strip.textContent = left === 1 ? "Today is the last day to give in 2026" : left + " days left to give in 2026";
+      cd.textContent = "Gifts made by December 31 count toward 2026.";
+      gd.textContent = "Every gift made by December 31 counts toward 2026.";
+      document.querySelectorAll(".eyebrow").forEach(function (e) { e.textContent = "Year-end giving · 2026"; });
+    } else {
+      strip.textContent = "Thank you for keeping Hancock students in school";
+      cd.textContent = "";
+    }
+  })();
+
+  /* Sticky give bar on mobile after the hero scrolls away */
+  (function () {
+    var sticky = document.getElementById("sticky");
+    var hero = document.querySelector(".hero");
+    var give = document.getElementById("give");
+    if (!("IntersectionObserver" in window)) return;
+    var heroVisible = true, giveVisible = false;
+    function update() { sticky.classList.toggle("show", !heroVisible && !giveVisible); }
+    new IntersectionObserver(function (e) { heroVisible = e[0].isIntersecting; update(); }).observe(hero);
+    new IntersectionObserver(function (e) { giveVisible = e[0].isIntersecting; update(); }).observe(give);
+  })();
+</script>
+</body>
+</html>
