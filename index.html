@@ -15,12 +15,12 @@
 </head>
 <body>
 
-<div class="strip">Free: REAL, the Foundation's new impact report</div>
+<div class="strip">Free: REAL, the 2026 Impact Report from the Allan Hancock College Foundation</div>
 
 <header class="top">
   <div class="wrap">
     <a class="brand" href="#top">Allan Hancock College Foundation<small>Santa Maria, California</small></a>
-    <a class="btn small" href="#signup">Get REAL</a>
+    <a class="btn small" href="#signup">Secure my copy</a>
   </div>
 </header>
 
@@ -28,16 +28,16 @@
   <section class="hero">
     <div class="wrap hero-grid">
       <div>
-        <div class="eyebrow">A free report for our community</div>
-        <h1>This is what keeping students in school looks like.</h1>
-        <p class="lede"><strong>REAL</strong> is the Foundation's new impact report. It tells the true stories of Hancock students, the bills that nearly stopped them, and the neighbors who stepped in.</p>
-        <p class="lede">Tell us where to send it. You'll get a free copy as soon as it's released.</p>
+        <div class="eyebrow">REAL &middot; The 2026 Impact Report</div>
+        <h1>Secure your free copy of REAL.</h1>
+        <p class="lede"><strong>In less than a minute, you can secure your copy of REAL.</strong> It's free because it connects you to a community that wants the best education opportunities for Santa Maria.</p>
+        <p class="lede">Inside: the true stories of Hancock students, the bills that nearly stopped them, and the neighbors who stepped in. Your copy arrives the day it's released.</p>
       </div>
 
       <div class="card" id="signup">
         <div id="form-wrap">
-          <h2>Send me REAL</h2>
-          <p class="sub">Free. Digital, printed, or both.</p>
+          <h2>Claim your free copy</h2>
+          <p class="sub">Digital, printed, or both. Takes less than a minute.</p>
           <form id="real-form" novalidate>
             <div class="row">
               <div class="field"><label for="first">First name</label><input id="first" name="firstName" type="text" autocomplete="given-name" required></div>
@@ -62,7 +62,7 @@
 
             <div class="hp" aria-hidden="true"><label for="company">Company</label><input id="company" name="company" type="text" tabindex="-1" autocomplete="off"></div>
 
-            <button class="btn" type="submit" id="submit">Send me REAL</button>
+            <button class="btn" type="submit" id="submit">Secure my copy</button>
             <div class="form-msg" id="form-msg" role="status" aria-live="polite"></div>
             <p class="fineprint">We'll email you when REAL is ready. You may also hear from the Foundation from time to time, and you can unsubscribe anytime. We never sell or share your information.</p>
           </form>
@@ -70,6 +70,15 @@
       </div>
     </div>
   </section>
+
+  <div class="proof" aria-label="The year in numbers">
+    <div class="wrap proof-grid">
+      <div><b>$725,035</b><span>in scholarships this year</span></div>
+      <div><b>409</b><span>students awarded</span></div>
+      <div><b>233</b><span>named scholarships</span></div>
+      <div><b>127</b><span>endowed funds held in trust</span></div>
+    </div>
+  </div>
 
   <section>
     <div class="wrap">
@@ -91,9 +100,9 @@
 
   <section class="band">
     <div class="wrap">
-      <h2>Be one of the first to read it.</h2>
-      <p>Sign up now and REAL will be in your inbox the day it's released.</p>
-      <a class="btn" href="#signup">Send me REAL</a>
+      <h2>Secure your copy now.</h2>
+      <p>In less than a minute, you join the neighbors who want the best education opportunities for Santa Maria. REAL arrives the day it's released.</p>
+      <a class="btn" href="#signup">Secure my copy</a>
     </div>
   </section>
 </main>
@@ -150,18 +159,18 @@
       if (!/^\d{5}(-\d{4})?$/.test(d.zip)) return fail("Please check your ZIP code.", form.zip);
     }
 
-    btn.disabled = true; btn.textContent = "Sending…";
+    btn.disabled = true; btn.textContent = "Securing your copy…";
     fetch("/api/subscribe", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(d) })
       .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { return { ok: r.ok, j: j }; }); })
       .then(function (res) {
         if (!res.ok) throw new Error(res.j.error || "Something went wrong.");
         var printed = d.format === "Print" ? " and mail a printed copy to the address you gave us" : "";
         document.getElementById("form-wrap").innerHTML =
-          '<div class="done"><div class="mark">&#10003;</div><h2>You\'re on the list.</h2>' +
+          '<div class="done"><div class="mark">&#10003;</div><h2>Your copy is secured.</h2>' +
           '<p class="sub">Thank you, ' + d.firstName.replace(/[<>&"]/g, "") + '. We\'ll email REAL to you as soon as it\'s released' + printed + '.</p></div>';
       })
       .catch(function (err) {
-        btn.disabled = false; btn.textContent = "Send me REAL";
+        btn.disabled = false; btn.textContent = "Secure my copy";
         fail(err.message + " Please try again in a moment.");
       });
   });
