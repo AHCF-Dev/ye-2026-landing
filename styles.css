@@ -19,6 +19,7 @@ a{color:var(--navy)}
 .narrow{max-width:680px}
 
 .strip{background:var(--gold);color:var(--navy-deep);font-weight:600;font-size:15px;text-align:center;padding:10px 16px}
+.strip-bare{height:44px;padding:0}
 
 header.top{background:var(--navy);color:#fff}
 header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:18px;padding-bottom:18px}
@@ -90,6 +91,8 @@ legend{font-size:14px;font-weight:600;color:var(--navy);margin-bottom:8px;paddin
 .area .stat{font-family:var(--serif);font-weight:700;color:var(--navy);font-size:18px;margin-bottom:14px}
 .area .btn{margin-top:auto;align-self:flex-start;font-size:16px;padding:12px 22px}
 .area.todo{border-style:dashed;background:transparent}
+.area[hidden]{display:none}
+.area.no-link{outline:2px dashed var(--error);outline-offset:4px}
 
 .question{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .big-q{font-family:var(--serif);font-size:clamp(24px, 3.4vw, 30px);line-height:1.3;color:var(--navy);font-weight:600}

@@ -20,5 +20,5 @@ Static site on Vercel, deployed from this repo. Every push to `main` redeploys.
 
 ## Before the Giving Tuesday switch
 - Fill in the fifth giving area.
-- Paste each area's donation URL into `GIVE_URLS` in `giving-tuesday.html`.
+- Paste each area's donation URL into `GIVE_URLS` in `giving-tuesday.html`. Any area without a URL is hidden on the page; add `?preview` to the address to see every area, with missing links outlined in red.
 - Remove its `noindex` tag.

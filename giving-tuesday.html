@@ -122,9 +122,16 @@
     "athletics": "",
     "fifth": ""
   };
+  /* An area with no donation link is hidden, so a missing URL can never go live.
+     To review every area while drafting, open the page with ?preview at the end of the address;
+     areas still missing a link are outlined in red. */
+  var PREVIEW = /[?&]preview\b/.test(location.search);
   document.querySelectorAll(".give-link").forEach(function (a) {
     var url = GIVE_URLS[a.getAttribute("data-area")];
+    var card = a.closest(".area");
     if (url) { a.href = url; a.target = "_blank"; a.rel = "noopener"; }
+    else if (PREVIEW) { card.classList.add("no-link"); }
+    else { card.hidden = true; }
   });
 
   /* Deadline messaging, in Pacific time */

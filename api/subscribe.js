@@ -62,9 +62,7 @@ module.exports = async function handler(req, res) {
     if (r.status === 201 || r.status === 204) return res.status(200).json({ ok: true });
     const detail = await r.text();
     console.error("Brevo error", r.status, detail);
-    let code = "";
-    try { code = JSON.parse(detail).code || ""; } catch (e) {}
-    return res.status(502).json({ error: "We couldn't save your signup.", brevoStatus: r.status, brevoCode: code });
+    return res.status(502).json({ error: "We couldn't save your signup." });
   } catch (err) {
     console.error("Brevo request failed", err);
     return res.status(502).json({ error: "We couldn't save your signup." });
